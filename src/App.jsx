@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import Navigation from "./Naviagtion";
 
 function App() {
@@ -12,7 +11,11 @@ function App() {
           count is {count}
         </button>
       </div>
-      <Navigation />
+      <div className="d-flex flex-nowrap">
+        <div className="flex-column flex-shrink-0">
+          <Navigation />
+        </div>
+      </div>
     </>
   );
 }
