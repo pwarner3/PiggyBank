@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navigation from "./Naviagtion";
+import GoalForm from "./GoalForm";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -12,6 +13,7 @@ function App() {
         <div className="row mt-5">
           <div className="col-3"></div>
           <div className="col-9">
+            <GoalForm />
             <button onClick={() => setCount((count) => count + 1)}>
               count is {count}
             </button>
