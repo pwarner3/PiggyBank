@@ -6,14 +6,16 @@ function App() {
 
   return (
     <>
-      <div className="card-1">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-      <div className="d-flex flex-nowrap">
-        <div className="flex-column flex-shrink-0">
-          <Navigation />
+      <Navigation />
+
+      <div className="container-fluid">
+        <div className="row mt-5">
+          <div className="col-3"></div>
+          <div className="col-9">
+            <button onClick={() => setCount((count) => count + 1)}>
+              count is {count}
+            </button>
+          </div>
         </div>
       </div>
     </>
