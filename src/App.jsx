@@ -12,11 +12,8 @@ function App() {
       <div className="container-fluid">
         <div className="row mt-5">
           <div className="col-3"></div>
-          <div className="col-9">
+          <div className="col-6">
             <GoalForm />
-            <button onClick={() => setCount((count) => count + 1)}>
-              count is {count}
-            </button>
           </div>
         </div>
       </div>
