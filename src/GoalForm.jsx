@@ -1,5 +1,6 @@
 import { useState } from "react";
 import GoalsTable from "./GoalsTable";
+import "./index.css";
 
 function GoalForm() {
   const [formData, setFormData] = useState({ itemName: "", amount: null });

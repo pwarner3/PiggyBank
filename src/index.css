@@ -21,3 +21,22 @@
   min-width: 320px;
   min-height: 100vh;
 } */
+
+/* Style the button */
+.hello {
+  display: inline-block;
+  padding: 10px 20px; /* Adjust the padding to change button size */
+  background-color: #007bff; /* Background color (blue in this example) */
+  color: #fff; /* Text color (white in this example) */
+  border: none; /* Remove the button border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Show a pointer cursor on hover */
+  transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+}
+
+/* Style the button on hover */
+.button:hover {
+  background-color: #0056b3; /* Darker background color on hover */
+  color: #fff; /* Text color remains white on hover */
+}

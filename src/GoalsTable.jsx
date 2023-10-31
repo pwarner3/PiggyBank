@@ -4,8 +4,8 @@ function GoalsTable(props) {
   return (
     <>
       <h3>Saving Goals</h3>
-      <table className="table table-resposnive table-hover table-striped caption-top">
-        <thead className="table-success">
+      <table className="table table-resposnive table-hover table-striped caption-top test">
+        <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Item Name</th>
