@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "./Naviagtion";
 import GoalForm from "./GoalForm";
+import ProgressBar from "./ProgressBar";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
           </div>
         </div>
       </div>
+      <ProgressBar />
     </>
   );
 }
