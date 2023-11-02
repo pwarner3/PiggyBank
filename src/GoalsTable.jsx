@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function GoalsTable(props) {
   return (
     <>
@@ -13,26 +11,15 @@ function GoalsTable(props) {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Barbie Doll</td>
-            <td>$25.00</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Toy Truck</td>
-            <td>$30.00</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Silly String</td>
-            <td>$10.00</td>
-          </tr>
+          {props.formDataItems.map((item) => (
+            <tr key={item.key}>
+              <th scope="row">{item.key.toString()}</th>
+              <td>{item.itemName}</td>
+              <td>${item.amount}.00</td>
+            </tr>
+          ))}
         </tbody>
       </table>
-      <div>
-        {props.formData.itemName} and {props.formData.amount}
-      </div>
     </>
   );
 }
