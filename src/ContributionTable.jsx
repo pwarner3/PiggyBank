@@ -1,3 +1,5 @@
+import ProgressBar from "./ProgressBar";
+
 function ContributionTable(props) {
   const filteredGoals = props.formDataItems.filter(
     (x) => x.itemName === props.selectedGoal
@@ -30,6 +32,7 @@ function ContributionTable(props) {
           ))}
         </tbody>
       </table>
+      <ProgressBar filteredData={filteredGoals} />
     </>
   );
 }

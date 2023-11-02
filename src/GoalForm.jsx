@@ -53,7 +53,7 @@ function GoalForm() {
 
         <input type="hidden" value={key} />
 
-        <button type="submit" className="btn btn-success">
+        <button type="submit" className="btn custom-btn">
           Add Goal
         </button>
       </form>
