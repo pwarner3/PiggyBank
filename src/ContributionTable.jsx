@@ -1,7 +1,20 @@
 function ContributionTable(props) {
+  const filteredGoals = props.formDataItems.filter(
+    (x) => x.itemName === props.selectedGoal
+  );
+  // .filter(
+  //   (item) => item.itemName === props.selectedGoal
+  // );
+  if (props.selectedGoal === "") {
+    return (
+      <>
+        <h2>No Goal Selected</h2>
+      </>
+    );
+  }
   return (
     <>
-      <h3>Goal Contributions</h3>
+      <h3>Goal Contributions for {props.selectedGoal}</h3>
       <table className="table table-resposnive table-hover table-striped caption-top">
         <thead className="table-success">
           <tr>
@@ -11,7 +24,7 @@ function ContributionTable(props) {
           </tr>
         </thead>
         <tbody>
-          {props.formDataItems.map((item) => (
+          {filteredGoals.map((item) => (
             <tr key={item.key}>
               <th scope="row">{item.key.toString()}</th>
               <td>{item.itemName}</td>

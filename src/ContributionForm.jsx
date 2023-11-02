@@ -91,6 +91,7 @@ function ContributionForm() {
       </form>
       <div className="row mt-5">
         <ContributionTable
+          selectedGoal={selectGoal}
           keyItem={key}
           setKey={setKey}
           formDataItems={formDataItems}
