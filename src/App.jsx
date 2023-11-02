@@ -1,6 +1,7 @@
 import Navigation from "./Naviagtion";
 import GoalForm from "./GoalForm";
 import ContributionForm from "./ContributionForm";
+import ProgressBar from "./ProgressBar";
 import { useState } from "react";
 
 function App() {

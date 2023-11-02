@@ -10,8 +10,15 @@ function ContributionForm(props) {
   // ]);
   const [key, setKey] = useState(props.contributionData.length);
 
+  //Lauren's code for progress bar
+  const [totalContributions, setTotalContributions] = useState(0);
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    //Lauren's code for progress bar
+    const newContribution = parseFloat(event.target.inputAmount.value);
+    setTotalContributions(totalContributions + newContribution);
+
     console.log(event.target.inputItemName.value);
     props.setContributionData([
       ...props.contributionData,
@@ -97,6 +104,7 @@ function ContributionForm(props) {
           formDataItems={props.formDataItems}
           handleSubmit={handleSubmit}
           contributionData={props.contributionData}
+          totalContributions={totalContributions}
         />
       </div>
     </>
