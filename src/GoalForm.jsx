@@ -2,22 +2,17 @@ import { useState } from "react";
 import GoalsTable from "./GoalsTable";
 import "./index.css";
 
-function GoalForm() {
-  const [formDataItems, setFormDataItems] = useState([
-    { key: 1, itemName: "Barbie Doll", amount: 25 },
-    { key: 2, itemName: "Toy Truck", amount: 30 },
-    { key: 3, itemName: "Silly String", amount: 10 },
-  ]);
-  const [key, setKey] = useState(formDataItems.length);
+function GoalForm(props) {
+  const [key, setKey] = useState(props.formDataItems.length);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(event.target.inputItemName.value);
-    setFormDataItems([
-      ...formDataItems,
+    props.setFormDataItems([
+      ...props.formDataItems,
       {
         // Use the current size as ID (needed to iterate the list later)
-        key: formDataItems.length + 1,
+        key: props.formDataItems.length + 1,
         itemName: event.target.inputItemName.value,
         amount: event.target.inputAmount.value,
       },
@@ -61,7 +56,7 @@ function GoalForm() {
         <GoalsTable
           keyItem={key}
           setKey={setKey}
-          formDataItems={formDataItems}
+          formDataItems={props.formDataItems}
           handleSubmit={handleSubmit}
         />
       </div>

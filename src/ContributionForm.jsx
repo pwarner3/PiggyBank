@@ -1,25 +1,25 @@
 import { useState } from "react";
 import ContributionTable from "./ContributionTable";
 
-function ContributionForm() {
+function ContributionForm(props) {
   const [selectGoal, setSelectGoal] = useState("");
-  const [formDataItems, setFormDataItems] = useState([
-    { key: 1, itemName: "Deposit 1", amount: 25 },
-    { key: 2, itemName: "Deposit 2", amount: 30 },
-    { key: 3, itemName: "Deposit 3", amount: 10 },
-  ]);
-  const [key, setKey] = useState(formDataItems.length);
+  // const [props.formDataItems, setprops.FormDataItems] = useState([
+  //   { key: 1, itemName: "Deposit 1", amount: 25 },
+  //   { key: 2, itemName: "Deposit 2", amount: 30 },
+  //   { key: 3, itemName: "Deposit 3", amount: 10 },
+  // ]);
+  const [key, setKey] = useState(props.contributionData.length);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(event.target.inputItemName.value);
-    setFormDataItems([
-      ...formDataItems,
+    props.setContributionData([
+      ...props.contributionData,
       {
         // Use the current size as ID (needed to iterate the list later)
-        key: formDataItems.length + 1,
-        itemName: event.target.inputItemName.value,
-        amount: event.target.inputAmount.value,
+        key: props.contributionData.length + 1,
+        goalToward: event.target.inputItemName.value,
+        amountContributed: event.target.inputAmount.value,
       },
     ]);
   };
@@ -42,7 +42,7 @@ function ContributionForm() {
                 Select A Goal
               </button>
               <ul className="dropdown-menu">
-                {formDataItems.map((item) => (
+                {props.formDataItems.map((item) => (
                   <li key={item.key}>
                     <button
                       type="button"
@@ -94,8 +94,9 @@ function ContributionForm() {
           selectedGoal={selectGoal}
           keyItem={key}
           setKey={setKey}
-          formDataItems={formDataItems}
+          formDataItems={props.formDataItems}
           handleSubmit={handleSubmit}
+          contributionData={props.contributionData}
         />
       </div>
     </>

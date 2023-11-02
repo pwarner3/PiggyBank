@@ -1,8 +1,8 @@
 import ProgressBar from "./ProgressBar";
 
 function ContributionTable(props) {
-  const filteredGoals = props.formDataItems.filter(
-    (x) => x.itemName === props.selectedGoal
+  const filteredGoals = props.contributionData.filter(
+    (x) => x.goalToward === props.selectedGoal
   );
   if (props.selectedGoal === "") {
     return (
@@ -13,7 +13,7 @@ function ContributionTable(props) {
   }
   return (
     <>
-      <h3>Goal Contributions for {props.selectedGoal}</h3>
+      <h3>Contributions for {props.selectedGoal}</h3>
       <table className="table table-resposnive table-hover table-striped caption-top">
         <thead className="table-success">
           <tr>
@@ -26,8 +26,8 @@ function ContributionTable(props) {
           {filteredGoals.map((item) => (
             <tr key={item.key}>
               <th scope="row">{item.key.toString()}</th>
-              <td>{item.itemName}</td>
-              <td>${item.amount}.00</td>
+              <td>{item.goalToward}</td>
+              <td>${item.amountContributed}.00</td>
             </tr>
           ))}
         </tbody>
