@@ -2,9 +2,6 @@ function ContributionTable(props) {
   const filteredGoals = props.formDataItems.filter(
     (x) => x.itemName === props.selectedGoal
   );
-  // .filter(
-  //   (item) => item.itemName === props.selectedGoal
-  // );
   if (props.selectedGoal === "") {
     return (
       <>
