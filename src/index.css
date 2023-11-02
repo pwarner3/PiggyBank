@@ -22,21 +22,44 @@
   min-height: 100vh;
 } */
 
-/* Style the button */
-.hello {
-  display: inline-block;
-  padding: 10px 20px; /* Adjust the padding to change button size */
-  background-color: #007bff; /* Background color (blue in this example) */
-  color: #fff; /* Text color (white in this example) */
+.custom-btn {
+  background-color: #363636 !important;
+  color: #fff !important; /* Text color (usually white for better readability on the background color) */
   border: none; /* Remove the button border */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 16px; /* Font size */
-  cursor: pointer; /* Show a pointer cursor on hover */
-  transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 5px; /* Add rounded corners if desired */
+  cursor: pointer; /* Change the cursor on hover for a button effect */
+  /* Add any other styles you want for the button */
 }
 
-/* Style the button on hover */
-.button:hover {
-  background-color: #0056b3; /* Darker background color on hover */
-  color: #fff; /* Text color remains white on hover */
+.custom-btn:hover {
+  background-color: black !important;
+}
+
+.custom-heading {
+  background-color: #8cc003;
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+body {
+  margin: 40px;
+}
+* {
+  box-sizing: border-box;
+}
+input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+.type-1 {
+  border-radius: 10px;
+  border: 1px solid #eee;
+  transition: 0.3s border-color;
+}
+.type-1:hover {
+  border: 1px solid #aaa;
 }
