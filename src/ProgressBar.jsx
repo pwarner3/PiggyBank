@@ -7,7 +7,7 @@ function ProgressBar() {
 
   return (
     <section>
-      <div class="container">
+      <div className="container">
         <div className="progress-bar">
           <div className="filler" style={{ width: `${percentage}%` }}>
             {`${percentage.toFixed(2)}%`}
