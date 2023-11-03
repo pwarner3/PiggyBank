@@ -15,7 +15,7 @@ function ContributionTable(props) {
     <>
       <h3>Contributions for {props.selectedGoal}</h3>
       <table className="table table-resposnive table-hover table-striped caption-top">
-        <thead className="table-success">
+        <thead className="table-dark">
           <tr>
             <th scope="col">#</th>
             <th scope="col">Item Name</th>

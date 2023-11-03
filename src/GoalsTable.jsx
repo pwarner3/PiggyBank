@@ -3,7 +3,7 @@ function GoalsTable(props) {
     <>
       <h3>Saving Goals</h3>
       <table className="table table-resposnive table-hover table-striped caption-top test">
-        <thead>
+        <thead className="table-dark">
           <tr>
             <th scope="col">#</th>
             <th scope="col">Item Name</th>
