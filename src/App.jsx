@@ -2,6 +2,8 @@ import Navigation from "./Naviagtion";
 import GoalForm from "./GoalForm";
 import ContributionForm from "./ContributionForm";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./HomePage";
 
 function App() {
   const [goalFormData, setGoalFormData] = useState([
@@ -23,23 +25,30 @@ function App() {
           <div className="col-3"></div>
           <div className="col-6">
             <div className="row">
-              <GoalForm
-                formDataItems={goalFormData}
-                setFormDataItems={setGoalFormData}
-              />
+              <Routes>
+                <Route exact path="/" element={<HomePage />} />
+                <Route
+                  path="/goals"
+                  element={
+                    <GoalForm
+                      formDataItems={goalFormData}
+                      setFormDataItems={setGoalFormData}
+                    />
+                  }
+                />
+                <Route
+                  path="/savings"
+                  element={
+                    <ContributionForm
+                      formDataItems={goalFormData}
+                      setFormDataItems={setGoalFormData}
+                      contributionData={contributionData}
+                      setContributionData={setContributionData}
+                    />
+                  }
+                />
+              </Routes>
             </div>
-            <section>
-              <div className="row pt-5 mt-5">
-                <div className="col-12">
-                  <ContributionForm
-                    formDataItems={goalFormData}
-                    setFormDataItems={setGoalFormData}
-                    contributionData={contributionData}
-                    setContributionData={setContributionData}
-                  />
-                </div>
-              </div>
-            </section>
           </div>
         </div>
       </div>

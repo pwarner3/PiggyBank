@@ -1,5 +1,5 @@
-//import { useState } from "react";
 import "./Navigation.css";
+import { Link, Outlet } from "react-router-dom";
 
 function Navigation() {
   return (
@@ -36,19 +36,19 @@ function Navigation() {
             <div className="offcanvas-body">
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <Link className="nav-link" to="/">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <Link className="nav-link" to="/goals">
                     Goals
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <Link className="nav-link" to="/savings">
                     Savings
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -58,6 +58,8 @@ function Navigation() {
           </a>
         </div>
       </nav>
+
+      <Outlet />
     </>
   );
 }
