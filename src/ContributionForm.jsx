@@ -33,7 +33,7 @@ function ContributionForm(props) {
 
   return (
     <>
-      <form onClick={handleClick}>
+      <form onSubmit={handleClick}>
         <div className="row mb-3">
           <div className="input-group align-items-center">
             <label htmlFor="inputItemName" className="col-3 col-form-label">
@@ -92,7 +92,7 @@ function ContributionForm(props) {
 
         <input type="hidden" value={key} />
 
-        <button onClick={handleClick} className="btn-icon-button">
+        <button type="submit" className="btn-icon-button">
           <img
             src="https://www.svgrepo.com/show/54081/piggy-bank-and-a-dollar-coin.svg" // Replace with the actual path to your SVG file
             alt="Piggy Bank"
