@@ -13,6 +13,19 @@ function ContributionTable(props) {
   }
   return (
     <>
+      <section>
+        <div className="row">
+          <div className="col-12">
+            <ProgressBar
+              filteredData={filteredGoals}
+              formDataItems={props.formDataItems}
+              totalContributions={props.totalContributions}
+              selectedGoal={props.selectedGoal}
+            />
+          </div>
+        </div>
+      </section>
+
       <h3>Contributions for {props.selectedGoal}</h3>
       <table className="table table-resposnive table-hover table-striped caption-top">
         <thead className="table-dark">
@@ -32,18 +45,6 @@ function ContributionTable(props) {
           ))}
         </tbody>
       </table>
-      <section>
-        <div className="row">
-          <div className="col-12">
-            <ProgressBar
-              filteredData={filteredGoals}
-              formDataItems={props.formDataItems}
-              totalContributions={props.totalContributions}
-              selectedGoal={props.selectedGoal}
-            />
-          </div>
-        </div>
-      </section>
     </>
   );
 }
