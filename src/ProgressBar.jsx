@@ -1,4 +1,3 @@
-import App from "./App";
 import "./ProgressBar.css";
 
 function ProgressBar(props) {

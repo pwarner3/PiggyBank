@@ -33,8 +33,8 @@ function ContributionTable(props) {
         </tbody>
       </table>
       <section>
-        <div class="row">
-          <div class="col-12">
+        <div className="row">
+          <div className="col-12">
             <ProgressBar
               filteredData={filteredGoals}
               formDataItems={props.formDataItems}
