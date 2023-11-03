@@ -29,14 +29,18 @@ function App() {
                 setFormDataItems={setGoalFormData}
               />
             </div>
-            <div className="row mt-5 pt-5">
-              <ContributionForm
-                formDataItems={goalFormData}
-                setFormDataItems={setGoalFormData}
-                contributionData={contributionData}
-                setContributionData={setContributionData}
-              />
-            </div>
+            <section>
+              <div className="row pt-5 mt-5">
+                <div className="col-12">
+                  <ContributionForm
+                    formDataItems={goalFormData}
+                    setFormDataItems={setGoalFormData}
+                    contributionData={contributionData}
+                    setContributionData={setContributionData}
+                  />
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>

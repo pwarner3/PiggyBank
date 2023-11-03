@@ -63,3 +63,7 @@ input {
 .type-1:hover {
   border: 1px solid #aaa;
 }
+
+img {
+  height: 75px;
+}

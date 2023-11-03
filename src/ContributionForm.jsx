@@ -13,7 +13,7 @@ function ContributionForm(props) {
   //Lauren's code for progress bar
   const [totalContributions, setTotalContributions] = useState(0);
 
-  const handleSubmit = (event) => {
+  const handleClick = (event) => {
     event.preventDefault();
     //Lauren's code for progress bar
     const newContribution = parseFloat(event.target.inputAmount.value);
@@ -33,15 +33,15 @@ function ContributionForm(props) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onClick={handleClick}>
         <div className="row mb-3">
           <div className="input-group align-items-center">
-            <label htmlFor="inputItemName" className="col-sm-2 col-form-label">
+            <label htmlFor="inputItemName" className="col-3 col-form-label">
               Goal Item Name
             </label>
-            <div className="dropdown py-2">
+            <div className="dropdown">
               <button
-                className="btn btn-secondary dropdown-toggle"
+                className="btn custom-btn dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -76,7 +76,7 @@ function ContributionForm(props) {
         </div>
         <div className="row mb-4">
           <div className="input-group">
-            <label htmlFor="inputAmount" className="col-sm-2 col-form-label">
+            <label htmlFor="inputAmount" className="col-3 col-form-label">
               Amount
             </label>
             <span className="input-group-text">$</span>
@@ -92,8 +92,12 @@ function ContributionForm(props) {
 
         <input type="hidden" value={key} />
 
-        <button type="submit" className="btn btn-dark">
-          Add Contribution
+        <button onClick={handleClick} className="btn-icon-button">
+          <img
+            src="https://www.svgrepo.com/show/54081/piggy-bank-and-a-dollar-coin.svg" // Replace with the actual path to your SVG file
+            alt="Piggy Bank"
+            className="btn-icon"
+          />
         </button>
       </form>
       <div className="row mt-5">
@@ -102,7 +106,7 @@ function ContributionForm(props) {
           keyItem={key}
           setKey={setKey}
           formDataItems={props.formDataItems}
-          handleSubmit={handleSubmit}
+          handleClick={handleClick}
           contributionData={props.contributionData}
           totalContributions={totalContributions}
         />

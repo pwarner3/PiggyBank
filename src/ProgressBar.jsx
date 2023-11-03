@@ -10,20 +10,12 @@ function ProgressBar(props) {
   props.filteredData.forEach(
     (x) => (contribution += parseInt(x.amountContributed))
   );
-  const goal = props.formDataItems.filter(
-    (x) => x.itemName == props.selectedGoal
-  );
-  //const totalGoalAmount = filteredData.reduce(
-  //(total, goal) => total + goal.amount,
-  // 0
-  // );
 
-  //console.log(props.formDataItems.amount);
-  //check to see what the total Goal amount is
-  console.log(contribution);
-  console.log(parseInt(goal.amount));
+  const goal = props.formDataItems.find(
+    (item) => item.itemName === props.selectedGoal
+  )?.amount;
 
-  const percentage = (contribution / parseInt(goal.amount)) * 100;
+  const percentage = (contribution / goal) * 100;
 
   return (
     <section>

@@ -32,12 +32,18 @@ function ContributionTable(props) {
           ))}
         </tbody>
       </table>
-      <ProgressBar
-        filteredData={filteredGoals}
-        formDataItems={props.formDataItems}
-        totalContributions={props.totalContributions}
-        selectedGoal={props.selectedGoal}
-      />
+      <section>
+        <div class="row">
+          <div class="col-12">
+            <ProgressBar
+              filteredData={filteredGoals}
+              formDataItems={props.formDataItems}
+              totalContributions={props.totalContributions}
+              selectedGoal={props.selectedGoal}
+            />
+          </div>
+        </div>
+      </section>
     </>
   );
 }
