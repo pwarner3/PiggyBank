@@ -54,7 +54,7 @@ function Navigation() {
             </div>
           </div>
           <a className="navbar-brand" href="/">
-            THE PIGGY BANK APP
+            COIN CUBBY
           </a>
         </div>
       </nav>
