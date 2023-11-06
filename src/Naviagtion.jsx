@@ -24,7 +24,7 @@ function Navigation() {
           >
             <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-                Piggy Bank
+                COIN CUBBY
               </h5>
               <button
                 type="button"
@@ -53,8 +53,8 @@ function Navigation() {
               </ul>
             </div>
           </div>
-          <a className="navbar-brand" href="#">
-            Piggy Bank App
+          <a className="navbar-brand" href="/">
+            THE PIGGY BANK APP
           </a>
         </div>
       </nav>

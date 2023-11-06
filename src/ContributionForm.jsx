@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ContributionTable from "./ContributionTable";
+import "./index.css";
 
 function ContributionForm(props) {
   const [selectGoal, setSelectGoal] = useState("");
@@ -33,83 +34,95 @@ function ContributionForm(props) {
 
   return (
     <>
-      <form onSubmit={handleClick}>
-        <div className="row mb-3">
-          <div className="input-group align-items-center">
-            <label htmlFor="inputItemName" className="col-3 col-form-label">
-              Goal Item Name
-            </label>
-            <div className="dropdown">
-              <button
-                className="btn custom-btn dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Select A Goal
-              </button>
-              <ul className="dropdown-menu">
-                {props.formDataItems.map((item) => (
-                  <li key={item.key}>
+      <div className="container-fluid">
+        <div className="row mt-5">
+          <div className="col-3"></div>
+          <div className="col-6">
+            <h1 className="custom-h1">Need to add or take out some money?</h1>
+            <form onSubmit={handleClick}>
+              <div className="row mb-3">
+                <div className="input-group align-items-center">
+                  <label
+                    htmlFor="inputItemName"
+                    className="col-3 col-form-label"
+                  >
+                    Goal Name
+                  </label>
+                  <div className="dropdown">
                     <button
+                      className="btn custom-btn dropdown-toggle"
                       type="button"
-                      className="dropdown-item"
-                      value={item.itemName}
-                      onClick={(e) => setSelectGoal(e.target.value)}
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
                     >
-                      {item.itemName}
+                      Select A Goal
                     </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="ms-3 py-2">
-              <input
-                type="text"
-                className="form-control"
-                id="inputItemName"
-                value={selectGoal}
-                disabled
+                    <ul className="dropdown-menu">
+                      {props.formDataItems.map((item) => (
+                        <li key={item.key}>
+                          <button
+                            type="button"
+                            className="dropdown-item"
+                            value={item.itemName}
+                            onClick={(e) => setSelectGoal(e.target.value)}
+                          >
+                            {item.itemName}
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="ms-3 py-2">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="inputItemName"
+                      value={selectGoal}
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="row mb-4">
+                <div className="input-group">
+                  <label htmlFor="inputAmount" className="col-3 col-form-label">
+                    Amount
+                  </label>
+                  <span className="input-group-text">$</span>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="inputAmount"
+                    aria-label="Amount (to the nearest dollar)"
+                  />
+                  <span className="input-group-text">.00</span>
+                </div>
+              </div>
+
+              <input type="hidden" value={key} />
+
+              <button type="submit" className="btn-icon-button">
+                <img
+                  src="https://www.svgrepo.com/show/54081/piggy-bank-and-a-dollar-coin.svg"
+                  alt="Piggy Bank"
+                  className="btn-icon"
+                  id="svg-icon"
+                />
+              </button>
+            </form>
+            <div className="row mt-5">
+              <ContributionTable
+                selectedGoal={selectGoal}
+                keyItem={key}
+                setKey={setKey}
+                formDataItems={props.formDataItems}
+                handleClick={handleClick}
+                contributionData={props.contributionData}
+                totalContributions={totalContributions}
               />
             </div>
           </div>
         </div>
-        <div className="row mb-4">
-          <div className="input-group">
-            <label htmlFor="inputAmount" className="col-3 col-form-label">
-              Amount
-            </label>
-            <span className="input-group-text">$</span>
-            <input
-              type="number"
-              className="form-control"
-              id="inputAmount"
-              aria-label="Amount (to the nearest dollar)"
-            />
-            <span className="input-group-text">.00</span>
-          </div>
-        </div>
-
-        <input type="hidden" value={key} />
-
-        <button type="submit" className="btn-icon-button">
-          <img
-            src="https://www.svgrepo.com/show/54081/piggy-bank-and-a-dollar-coin.svg" // Replace with the actual path to your SVG file
-            alt="Piggy Bank"
-            className="btn-icon"
-          />
-        </button>
-      </form>
-      <div className="row mt-5">
-        <ContributionTable
-          selectedGoal={selectGoal}
-          keyItem={key}
-          setKey={setKey}
-          formDataItems={props.formDataItems}
-          handleClick={handleClick}
-          contributionData={props.contributionData}
-          totalContributions={totalContributions}
-        />
       </div>
     </>
   );

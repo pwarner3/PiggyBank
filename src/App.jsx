@@ -19,39 +19,29 @@ function App() {
   return (
     <>
       <Navigation />
-
-      <div className="container-fluid">
-        <div className="row mt-5">
-          <div className="col-3"></div>
-          <div className="col-6">
-            <div className="row">
-              <Routes>
-                <Route exact path="/" element={<HomePage />} />
-                <Route
-                  path="/goals"
-                  element={
-                    <GoalForm
-                      formDataItems={goalFormData}
-                      setFormDataItems={setGoalFormData}
-                    />
-                  }
-                />
-                <Route
-                  path="/savings"
-                  element={
-                    <ContributionForm
-                      formDataItems={goalFormData}
-                      setFormDataItems={setGoalFormData}
-                      contributionData={contributionData}
-                      setContributionData={setContributionData}
-                    />
-                  }
-                />
-              </Routes>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Routes>
+        <Route exact path="/" element={<HomePage />} />
+        <Route
+          path="/goals"
+          element={
+            <GoalForm
+              formDataItems={goalFormData}
+              setFormDataItems={setGoalFormData}
+            />
+          }
+        />
+        <Route
+          path="/savings"
+          element={
+            <ContributionForm
+              formDataItems={goalFormData}
+              setFormDataItems={setGoalFormData}
+              contributionData={contributionData}
+              setContributionData={setContributionData}
+            />
+          }
+        />
+      </Routes>
     </>
   );
 }

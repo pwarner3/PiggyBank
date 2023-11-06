@@ -7,7 +7,7 @@ function ContributionTable(props) {
   if (props.selectedGoal === "") {
     return (
       <>
-        <h2>No Goal Selected</h2>
+        <h2 className="no-goal-selected">No Goal Selected</h2>
       </>
     );
   }

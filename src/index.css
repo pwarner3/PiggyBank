@@ -67,3 +67,22 @@ input {
 img {
   height: 75px;
 }
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#svg-icon path {
+  fill: pink;
+}
+
+.custom-h1 {
+  letter-spacing: -0.03em;
+  font-size: 40px !important;
+  padding-bottom: 40px !important;
+  text-shadow: 0px 0px 0px rgba(5, 9, 74, 0.15) !important;
+}
+
+.no-goal-selected {
+  text-align: center;
+}
